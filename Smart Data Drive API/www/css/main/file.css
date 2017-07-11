@@ -1,0 +1,100 @@
+/* 
+ * Copyright 2017 Luca Bartolomei <bartn8@hotmal.it>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* 
+    Created on : 17-nov-2016, 19.08.06
+    Author     : Luca Bartolomei bartn8@hotmail.it
+*/
+
+/* File View */
+.fileBlock{
+    padding-top: 5px;    
+    padding-bottom: 5px;    
+    margin: 5px;
+    background-color: #e8e8e8;
+    box-shadow: 2px 2px #eee;
+    display: inline-block;
+    float: left;
+}
+
+.fileBlock.selected{
+    background-color: #b8f8b8;
+}
+
+.fileBlockIcon{
+    max-width: 90px;
+    height: auto;
+    max-height: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fileBlockButton{
+    height: auto;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* File Info View */
+
+#fileInfoView{
+    display: none;
+}
+
+.fileInfoIcon{
+    height: auto;
+    max-width: 200px;
+    max-height: 300px;
+    display: block;
+    border-right: 1px dotted black;
+}
+
+/* Files Tags View */
+
+
+
+/* File Options View */
+
+#fileOptionsView{
+    overflow: hidden;
+}
+
+/* File Upload View */
+
+.largeProgress {
+    height: 30px;
+}
+
+.dropzone-progresslabel{
+    color: white;
+    font-weight: bold;
+}
+
+#fileUploadView{
+    display: none;
+    border: 2px black dashed;
+}
+
+#logView{
+    max-height: 250px;
+    height: auto;
+    /*overflow-x: hidden;*/
+}
+
+.editorImageViewCanvas{
+    border: 1px black dotted;
+}

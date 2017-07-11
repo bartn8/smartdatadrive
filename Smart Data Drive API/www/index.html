@@ -1,0 +1,342 @@
+<!--
+ * 
+ * Copyright 2017 Luca Bartolomei <bartn8@hotmal.it>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Data Drive</title>
+
+        <!-- Thirdparty -->
+
+        <!-- CSS -->
+        <link href="css/thirdparty/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/thirdparty/bootstrap-horizon.css" rel="stylesheet" type="text/css"/>
+        <link href="css/thirdparty/bootstrap-toggle.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- JS -->
+        <script src="js/thirdparty/jquery-2.2.4.min.js" type="text/javascript"></script>
+        <script src="js/thirdparty/bootstrap.js" type="text/javascript"></script>
+        <script src="js/thirdparty/bootbox.min.js" type="text/javascript"></script>
+        <script src="js/thirdparty/dropzone.js" type="text/javascript"></script>
+        <script src="js/thirdparty/jcanvas.min.js" type="text/javascript"></script>
+        <script src="js/thirdparty/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="js/thirdparty/json2.js" type="text/javascript"></script>
+        <script src="js/thirdparty/bootstrap-toggle.min.js" type="text/javascript"></script>
+        <!--<script src="js/thirdparty/pdf.js" type="text/javascript"></script>-->
+        <!--<script src="js/thirdparty/webodf.js" type="text/javascript"></script>-->
+
+        <!-- MAIN -->
+
+        <!-- CSS -->
+        <link href="css/main/index.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="css/main/neural.css" rel="stylesheet" type="text/css"/>-->
+        <link href="css/main/file.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="css/main/tools.css" rel="stylesheet" type="text/css"/>-->
+        <link href="css/main/footer.css" rel="stylesheet" type="text/css"/>
+
+        <!-- JS -->
+        <!-- Models -->
+        <!--<script src="js/main/model/tools/ToolSelection.js" type="text/javascript"></script>-->
+        <script src="js/main/model/file/TreeData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/TagsData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/FileSelection.js" type="text/javascript"></script>
+        <script src="js/main/model/file/TagSelection.js" type="text/javascript"></script>
+        <script src="js/main/model/file/FileInfoData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/FileData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/DropzoneData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/options/FilesOptionsData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/options/FileOptionsData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/editor/EditorImageData.js" type="text/javascript"></script>
+        <script src="js/main/model/neural/NeuralData.js" type="text/javascript"></script>
+        <script src="js/main/model/footer/AccountData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/FileSuggestedTagsData.js" type="text/javascript"></script>
+        <script src="js/main/model/file/FeedbackData.js" type="text/javascript"></script>
+
+        <!-- Views -->
+        <!--<script src="js/main/view/tools/tools/Tool.js" type="text/javascript"></script>-->
+        <script src="js/main/view/View.js" type="text/javascript"></script>
+        <script src="js/main/view/file/options/FileOptionsView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/options/FileUploadOptionsView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/options/FilesOptionsView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/editor/options/EditorImageOptionsView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/editor/EditorImageView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/FileInfoView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/FileTagsView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/FileUploadView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/FileView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/TreeView.js" type="text/javascript"></script>
+        <script src="js/main/view/neural/NeuralView.js" type="text/javascript"></script>
+        <!--<script src="js/main/view/tools/tools/HighlighterTool.js" type="text/javascript"></script>-->
+        <!--<script src="js/main/view/tools/ToolsEditorView.js" type="text/javascript"></script>-->
+        <script src="js/main/view/footer/AccountInfoView.js" type="text/javascript"></script>
+        <script src="js/main/view/log/LogView.js" type="text/javascript"></script>
+        <script src="js/main/view/log/EditLogView.js" type="text/javascript"></script>
+        <script src="js/main/view/bootbox/BootboxNewTagDialog.js" type="text/javascript"></script>
+        <script src="js/main/view/bootbox/BootboxLinkTagFileDialog.js" type="text/javascript"></script>
+        <script src="js/main/view/bootbox/BootboxSelectPresetDialog.js" type="text/javascript"></script>
+        <script src="js/main/view/bootbox/BootboxLoginDialog.js" type="text/javascript"></script>
+        <script src="js/main/view/bootbox/BootboxRegistrationDialog.js" type="text/javascript"></script>
+        <script src="js/main/view/bootbox/dynamic/BootboxSelectPresetDynamicView.js" type="text/javascript"></script>
+        <script src="js/main/view/file/FileSuggestedTagsView.js" type="text/javascript"></script>
+
+
+        <!-- Controllers -->
+        <script src="js/main/controller/Controller.js" type="text/javascript"></script>
+        <script src="js/main/controller/file/FileController.js" type="text/javascript"></script>
+        <!--<script src="js/main/controller/tools/ToolsController.js" type="text/javascript"></script>-->
+        <script src="js/main/controller/neural/NeuralController.js" type="text/javascript"></script>
+        <script src="js/main/controller/footer/FooterController.js" type="text/javascript"></script>
+        <script src="js/main/controller/log/LogController.js" type="text/javascript"></script>
+
+        <!-- Script index -->
+        <script src="js/main/index.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!-- Modals -->
+        <div id="infoModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Informazioni</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="media">
+                            <div class="media-left">
+                                <div class="media-object" style="width:350px;"><span class="logo-xl all"><span class="logo-xl s">S</span><span class="logo-xl m">M</span><span class="logo-xl a">A</span><span class="logo-xl r">R</span><span class="logo-xl t">T</span><span class="logo-xl datadrive"> Data Drive</span></span></div>
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">Smart Data Drive</h4>
+                                <p>Copyright 2017 Luca Bartolomei &#60;&#98;&#97;&#114;&#116;&#110;&#56;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#105;&#116;&#62;. Licensed under the Apache License, Version 2.0. <a href="http://www.apache.org/licenses/LICENSE-2.0">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <h3>Copyright - Thirdparty</h3>
+                        <div class="media">
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">gisconverter.php</h4>
+                                <p>Copyright (c) 2010-2011 Arnaud Renevier, Inc. Licensed under the modified BSD license.</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="logos/bootbox.png" alt="bootbox" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">bootbox.js v4.4.0</h4>
+                                <p>Copyright (C) 2011-2015 by Nick Payne &#60;&#110;&#105;&#99;&#107;&#64;&#107;&#117;&#114;&#97;&#105;&#46;&#99;&#111;&#46;&#117;&#107;&#62;. Licensed under MIT License. <a href="http://bootboxjs.com/license.txt">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="logos/bootstrap.png" alt="bootstrap" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">Bootstrap v3.3.4</h4>
+                                <p>Copyright 2011-2015 Twitter, Inc. Licensed under MIT License. <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">Bootstrap Horizon</h4>
+                                <p>Copyright (c) 2016 Pier-Luc Gendreau. Licensed under MIT License. <a href="https://raw.githubusercontent.com/Zertz/bootstrap-horizon/master/license">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">Bootstrap Toggle</h4>
+                                <p>Copyright (c) 2011-2014 Min Hur, The New York Times Company. <a href="https://raw.githubusercontent.com/minhur/bootstrap-toggle/master/LICENSE">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img style="width: 350px;" src="logos/dropzonejs.svg" alt="dropzonejs" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">Dropzone</h4>
+                                <p>Copyright (c) 2012 Matias Meno &#60;&#109;&#64;&#116;&#105;&#97;&#115;&#46;&#109;&#101;&#62;. Licensed under MIT License. <a href="http://www.dropzonejs.com">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="logos/jcanvas.png" alt="jcanvas" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">jCanvas v16.06.06</h4>
+                                <p>Copyright 2016 Caleb Evans. Licensed under MIT License. <a href="https://raw.githubusercontent.com/caleb531/jcanvas/master/LICENSE.txt">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img style="width: 300px;" src="logos/jquery.svg" alt="jquery" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">jQuery v2.2.4</h4>
+                                <p>Copyright (c) jQuery Foundation. Licensed under MIT License. <a href="https://js.foundation/pdf/ip-policy.pdf">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">jQuery Mousewheel 3.1.13</h4>
+                                <p>Copyright 2015 jQuery Foundation and other contributors. Licensed under MIT License. <a href="https://raw.githubusercontent.com/brandonaaron/jquery-mousewheel/master/LICENSE.txt">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img style="width: 100px; height: 100px;" src="logos/pdfjs.svg" alt="pdfjs" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">pdf.js & pdf.worker.js</h4>
+                                <p>Copyright 2012 Mozilla Foundation. Licensed under Apache License, Version 2.0. <a href="https://raw.githubusercontent.com/mozilla/pdf.js/master/LICENSE">LICENSE</a></p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img style="width: 100px; height: 100px;" src="logos/webodf.png" alt="pdfjs" class="media-object">
+                            </div>
+                            <div class="media-body  media-middle">
+                                <h4 class="media-heading">webodf.js</h4>
+                                <p>Copyright (C) 2010-2015 KO GmbH &#60;&#99;&#111;&#112;&#121;&#114;&#105;&#103;&#104;&#116;&#64;&#107;&#111;&#103;&#109;&#98;&#104;&#46;&#99;&#111;&#109;&#62;. Licensed under the terms of the GNU Affero General Public License (GNU AGPL). <a href="http://webodf.org/about/license.html">LICENSE</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- MAIN -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <span class="navbar-brand"><span class="logo all"><span class="logo s">S</span><span class="logo m">M</span><span class="logo a">A</span><span class="logo r">R</span><span class="logo t">T</span><span class="logo datadrive"> Data Drive</span></span></span>
+                </div>
+                <ul class="nav navbar-nav">
+                    <!-- LEFT -->
+                    <li><a href="#" data-toggle="modal" data-target="#infoModal">Informazioni</a></li>
+		    <li><a href="http://prezi.com/nnxu_zk5a8pq/?utm_campaign=share&utm_medium=copy">Presentazione Prezi</a></li>
+                </ul>  
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Configurazione Neurale</h3>
+                        </div>
+                        <div class="panel-body"> 
+                            <div class="container-fluid" id="neuralView"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div id="chcHeader">
+                                <!-- Opzioni del file selezionato oppure dei singoli file (selezione etc) -->
+                                <div class="container-fluid" id="fileOptionsView"></div>
+                                <div class="container-fluid" id="filesOptionsView"></div>
+                                <div class="container-fluid" id="fileUploadOptionsView"></div>
+                                <div class="container-fluid" id="editorImageOptionsView"></div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <!-- Usato solo per directory view -->
+                                    <div class="col-md-2">
+                                        <!-- link al TreeView -->
+                                        <div class="container-fluid" id="treeView"></div>
+                                    </div>
+                                    <!-- Contiene le view file-->
+                                    <div class="col-md-10">
+                                        <!-- link al FileView -->
+                                        <div class="container-fluid" id="fileView"></div>
+                                        <!-- link al FileInfoView -->
+                                        <div class="container-fluid" id="fileInfoView"></div>
+                                        <!-- link al FileUploadView -->
+                                        <div class="container-fluid" id="fileUploadView"></div>
+                                        <!-- link al EditorImageView -->
+                                        <div class="container-fluid" id="editorImageView"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!-- Continene un filtro per i tags oppure i tag di singolo file -->
+                                        <div id="fileTagsView" class="container-fluid"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!-- Continene i tag suggeriti per il file -->
+                                        <div id="fileSuggestedTagsView" class="container-fluid"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h4>Log</h4>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div id="editLogView"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-body">
+                            <div class="container-fluid" id="logView"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="accountInfoView" class="container-fluid"></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+/* 
+ * Copyright 2017 Luca Bartolomei <bartn8@hotmal.it>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*logo-xl.media-object{
+    width: 350px;
+}*/
+
+span.logo.all{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+span.logo.s{
+	color: #eea236;
+	font-size: 14px;
+}
+
+span.logo.m{
+	color: blue;
+	font-size: 15px;
+}
+
+span.logo.a{
+	color: red;
+	font-size: 16px;
+}
+
+span.logo.r{
+	color: green;
+	font-size: 17px;
+}
+
+span.logo.t{
+	color: violet;
+}
+
+span.logo.datadrive{
+	/*font-family: Verdana;*/
+	font-weight: normal;
+}
+
+span.logo-xl.all{
+	font-weight: bold;
+	font-size: 36px;
+}
+
+span.logo-xl.s{
+	color: #eea236;
+	font-size: 28px;
+}
+
+span.logo-xl.m{
+	color: blue;
+	font-size: 30px;
+}
+
+span.logo-xl.a{
+	color: red;
+	font-size: 32px;
+}
+
+span.logo-xl.r{
+	color: green;
+	font-size: 34px;
+}
+
+span.logo-xl.t{
+	color: violet;
+}
+
+span.logo-xl.datadrive{
+	/*font-family: Verdana;*/
+	font-weight: normal;
+}
+
+#commonInterface{
+    display: none;
+}
+
+.footer{
+    position: absolute;
+    top: 90.5%;
+}
+
+.loader {
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    width: 40px;
+    height: 40px;
+    /*float:left;*/
+}
+
+.loader.xl{
+    width: 64px;
+    height: 64px;
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
